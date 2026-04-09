@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Meridian17 podcast - in-depth conversations on Africa-Europe business partnership, policy and culture.">
+  <title>Podcast | Meridian17</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .podcast-hero { background: var(--dark-green); padding: 80px 0 72px; }
+    .podcast-hero__title { font-size: 52px; font-weight: 500; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px; }
+    .podcast-hero__sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 580px; font-weight: 300; }
+
+    .series-feature { display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: start; }
+    .series-cover { border-radius: 4px; overflow: hidden; background: var(--mid-green); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+    .series-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .series-cover__placeholder { text-align: center; padding: 32px; }
+    .series-cover__placeholder p { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; margin-top: 12px; }
+    .series-badge { display: inline-block; background: #e6f0e6; color: var(--mid-green); font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; padding: 4px 10px; border-radius: 3px; margin-bottom: 16px; }
+    .series-badge--soon { background: #f0f0e8; color: #666; }
+    .series-title { font-size: 32px; font-weight: 500; color: var(--near-black); line-height: 1.2; margin-bottom: 16px; }
+    .series-meta { font-size: 14px; color: var(--body-muted); font-weight: 300; margin-bottom: 20px; }
+    .series-meta strong { font-weight: 500; color: var(--near-black); }
+    .series-body { font-size: 17px; line-height: 1.75; color: var(--body-muted); font-weight: 300; margin-bottom: 24px; }
+    .series-sponsor { margin-top: 24px; padding: 20px 24px; background: var(--off-white); border-radius: 4px; border-left: 3px solid var(--mid-green); }
+    .series-sponsor p { font-size: 13px; color: var(--body-muted); font-weight: 300; line-height: 1.6; }
+    .series-sponsor strong { font-weight: 500; color: var(--near-black); }
+
+    .platforms { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .platform-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid var(--border); border-radius: 3px; font-size: 13px; color: var(--near-black); font-weight: 400; background: var(--white); transition: border-color 0.2s; }
+    .platform-btn:hover { border-color: var(--mid-green); color: var(--mid-green); }
+    .platform-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .share-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .share-label { font-size: 13px; color: var(--body-muted); font-weight: 400; }
+    .share-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 3px; border: 1px solid var(--border); background: var(--white); transition: all 0.2s; }
+    .share-btn:hover { border-color: var(--mid-green); background: #e6f0e6; }
+    .share-btn svg { width: 16px; height: 16px; }
+
+    .episodes-placeholder { background: var(--off-white); border-radius: 4px; padding: 48px 32px; text-align: center; margin-top: 40px; }
+    .episodes-placeholder h3 { font-size: 20px; font-weight: 500; color: var(--near-black); margin-bottom: 12px; }
+    .episodes-placeholder p { font-size: 15px; color: var(--body-muted); font-weight: 300; max-width: 480px; margin: 0 auto; }
+
+    .host-row { display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: center; }
+    .host-photo { width: 160px; height: 160px; border-radius: 50%; overflow: hidden; background: #c8d8c8; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 500; color: var(--mid-green); }
+    .host-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .host-name { font-size: 26px; font-weight: 500; color: var(--near-black); margin-bottom: 6px; }
+    .host-title { font-size: 14px; color: var(--mid-green); font-weight: 500; margin-bottom: 16px; }
+    .host-bio { font-size: 16px; line-height: 1.75; color: var(--body-muted); font-weight: 300; }
+
+    .future-series { background: var(--off-white); border-radius: 4px; padding: 40px; }
+    .future-series h3 { font-size: 22px; font-weight: 500; color: var(--near-black); margin-bottom: 16px; }
+    .future-series p { font-size: 16px; line-height: 1.7; color: var(--body-muted); font-weight: 300; margin-bottom: 0; }
+
+    @media (max-width: 1024px) {
+      .series-feature { grid-template-columns: 240px 1fr; gap: 40px; }
+      .host-row { grid-template-columns: 120px 1fr; gap: 28px; }
+      .host-photo { width: 120px; height: 120px; }
+    }
+    @media (max-width: 640px) {
+      .podcast-hero__title { font-size: 32px; }
+      .series-feature { grid-template-columns: 1fr; }
+      .series-cover { max-width: 280px; }
+      .host-row { grid-template-columns: 1fr; text-align: center; }
+      .host-photo { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="Meridian17">
+        Meridian17
+      </a>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="tools.html">Tools</a>
+        <a href="podcast.html" style="color:var(--white)">Podcast</a>
+        <a href="experts.html">Experts</a>
+        <button class="nav__cta" onclick="window.location='mailto:info@meridian17.org'">Contact</button>
+      </div>
+      <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="tools.html">Tools</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="experts.html">Experts</a>
+      <a href="mailto:info@meridian17.org">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="podcast-hero">
+    <div class="container">
+      <p class="label--white">Podcast</p>
+      <h1 class="podcast-hero__title">Research that becomes conversation. Conversation that drives change.</h1>
+      <p class="podcast-hero__sub">The Meridian17 podcast brings together researchers, policymakers, journalists and business leaders for in-depth conversations on Africa-Europe partnership. Each series focuses on a specific dimension of the relationship - starting with the state of journalism across the continent.</p>
+    </div>
+  </section>
+
+  <!-- Series 1 feature -->
+  <section class="section section--white">
+    <div class="container">
+      <p class="label">Series 1</p>
+      <div class="series-feature">
+        <div>
+          <div class="series-cover">
+            <div class="series-cover__placeholder">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <circle cx="24" cy="24" r="8" fill="rgba(255,255,255,0.2)"/>
+                <line x1="24" y1="4" x2="24" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
+              </svg>
+              <p>Cover image coming soon</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="series-badge series-badge--soon">Coming soon</span>
+          <h2 class="series-title">Journalism in Africa: press freedom, economics, and the European gaze</h2>
+          <p class="series-meta"><strong>10 episodes</strong> · Bi-weekly · English with French and Arabic captions</p>
+          <p class="series-body">African journalism is at a crossroads. Press freedom is under pressure across the continent, the economics of the industry are shifting rapidly, and the way European media portrays Africa continues to shape perceptions on both sides. This series examines all of it - frankly, with the people who know it best.</p>
+          <p class="series-body">Each episode is structured around a brief framing segment, an in-depth interview, a practical toolbox segment, and a signals and calls-to-action close. The series concludes with an end-of-season report distributed to relevant professional networks.</p>
+
+          <div class="series-sponsor">
+            <p><strong>Produced in partnership with the KAS Media Programme Sub-Saharan Africa.</strong> <!-- PLACEHOLDER: full sponsor credit and logo to be added once agreed. See content to-do list. --></p>
+          </div>
+
+          <div class="platforms">
+            <!-- PLACEHOLDER: replace # with actual platform URLs once live -->
+            <a href="#" class="platform-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+              Spotify
+            </a>
+            <a href="#" class="platform-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102 1.379-4.735 1.645-7.897.777-1.281-.35-2.501-.918-3.546-1.716-.384-.29-.449-.84-.147-1.215.302-.374.852-.434 1.228-.14.876.664 1.884 1.138 2.953 1.431 2.537.694 4.701.478 6.42-.639.41-.27.958-.159 1.228.251.271.41.16.959-.239 1.251zm1.441-3.025c-.336.531-1.034.695-1.561.358-2.466-1.517-6.226-1.958-9.141-1.071-.472.139-.969-.128-1.11-.601-.141-.472.128-.97.601-1.11 3.33-1.012 7.47-.521 10.303 1.221.528.324.692 1.024.358 1.56-.336.531-1.034.695-1.561.358zm.122-3.155C15.12 9.02 9.56 8.82 6.4 9.76c-.569.174-1.17-.146-1.345-.715-.174-.569.145-1.171.714-1.345 3.64-1.103 9.648-.89 13.456 1.388.513.294.692.947.399 1.46-.294.513-.947.692-1.46.4z"/></svg>
+              Apple Podcasts
+            </a>
+            <a href="#" class="platform-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+              YouTube
+            </a>
+            <a href="#" class="platform-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.562 8.16H16.83c-.198 0-.434.26-.434.608v1.522h2.166l-.328 2.31h-1.838V18.7h-2.393v-6.1h-1.52V10.29h1.52V8.49c0-1.675.994-2.869 2.863-2.869.814 0 1.696.122 1.696.122V8.16z"/></svg>
+              More platforms
+            </a>
+          </div>
+
+          <div class="share-row">
+            <span class="share-label">Share this series:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.meridian17.org/podcast.html" target="_blank" class="share-btn" aria-label="Share on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="var(--near-black)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://wa.me/?text=The%20Meridian17%20podcast%20on%20journalism%20in%20Africa%3A%20https://www.meridian17.org/podcast.html" target="_blank" class="share-btn" aria-label="Share on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="var(--near-black)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://www.meridian17.org/podcast.html&text=The%20Meridian17%20podcast%20on%20journalism%20in%20Africa" target="_blank" class="share-btn" aria-label="Share on X">
+              <svg viewBox="0 0 24 24" fill="var(--near-black)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="share-btn" aria-label="Share on Instagram">
+              <svg viewBox="0 0 24 24" fill="var(--near-black)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" class="share-btn" aria-label="Share on TikTok">
+              <svg viewBox="0 0 24 24" fill="var(--near-black)"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Episodes placeholder -->
+      <div class="episodes-placeholder">
+        <h3>Episodes coming soon</h3>
+        <p>We are currently in production. Subscribe to our newsletter to be notified when the first episode drops, or follow us on LinkedIn for updates.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Host -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <p class="label">Our host</p>
+      <div class="host-row">
+        <div class="host-photo">
+          <img src="assets/img/advisors/georja-calvin-smith.jpg" alt="Georja Calvin-Smith">
+        </div>
+        <div>
+          <h2 class="host-name">Georja Calvin-Smith</h2>
+          <p class="host-title">Lead anchor, France 24 Eye on Africa</p>
+          <p class="host-bio">Georja is a Paris-based journalist, event moderator and TV news presenter with over two decades of experience in international current affairs broadcasting. She currently produces and anchors the daily Eye on Africa bulletin at France 24 and presents the weekly Across Africa magazine show. She regularly chairs panels for institutions including the African Development Bank and the OECD's Africa Forum.</p>
+          <p class="host-bio" style="margin-top:16px">Her deep familiarity with the issues at the heart of Meridian17's research agenda makes her uniquely positioned to translate complex policy and business topics into accessible, engaging conversations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the podcast ecosystem -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <p class="label">About the podcast</p>
+          <h2 class="section-title">More than a podcast. A research ecosystem.</h2>
+          <p class="section-body">The Meridian17 podcast is not a standalone product. It sits at the centre of our dissemination strategy, designed to translate research outputs into accessible, engaging content and distribute them at scale across both continents.</p>
+          <p class="section-body">Research findings generate podcast conversations. Podcast conversations generate new research questions and connections. The ecosystem is designed to be self-reinforcing over time, with a growing audience and a progressively expanding network of contributors and followers.</p>
+        </div>
+        <div class="future-series">
+          <p class="label">Future series</p>
+          <h3>This is just the beginning.</h3>
+          <p>The journalism series is the first of many. Future series will focus on other dimensions of the Africa-Europe business partnership - from investment and trade to culture, technology, and the policy frameworks that shape the relationship. Each series will be developed in partnership with relevant funders and institutional partners, and linked directly to Meridian17's ongoing research programme.</p>
+          <p style="margin-top:16px">If you are interested in partnering on a future series, we would like to hear from you.</p>
+          <a href="mailto:info@meridian17.org" class="text-link" style="display:inline-block;margin-top:20px">Get in touch →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <p class="label" style="text-align:center">Stay informed</p>
+      <h2 class="newsletter__title">Be the first to know when we launch</h2>
+      <p class="newsletter__sub">Subscribe to our newsletter and we will let you know when the first episode drops.</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/img/logo.svg" alt="Meridian17">
+            Meridian17
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian - the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="about.html">About</a>
+            <a href="experts.html">Experts</a>
+            <a href="about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="research.html">Research</a>
+            <a href="tools.html">Tools</a>
+            <a href="podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="index.html#newsletter">Newsletter</a>
+            <a href="https://www.linkedin.com/company/meridian17" target="_blank">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Meridian17</span>
+        <span>
+          <a href="privacy.html" style="color:rgba(255,255,255,0.25)">Privacy policy</a> ·
+          <a href="accessibility.html" style="color:rgba(255,255,255,0.25)">Accessibility</a> ·
+          <a href="terms.html" style="color:rgba(255,255,255,0.25)">Terms</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
