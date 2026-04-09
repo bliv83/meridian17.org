@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian17 research - business-centred analysis of Africa-Europe cooperation.">
+  <title>Research | Meridian17</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .research-hero { background: var(--dark-green); padding: 80px 0 72px; }
+    .research-hero__title { font-size: 52px; font-weight: 500; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px; }
+    .research-hero__sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 580px; font-weight: 300; }
+    .topic-list { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
+    .topic { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 32px; display: grid; grid-template-columns: 48px 1fr; gap: 24px; align-items: start; }
+    .topic__number { font-size: 13px; font-weight: 500; color: var(--mid-green); padding-top: 4px; }
+    .topic__content h3 { font-size: 22px; font-weight: 500; color: var(--near-black); line-height: 1.3; margin-bottom: 10px; }
+    .topic__content p { font-size: 15px; line-height: 1.65; color: var(--body-muted); font-weight: 300; margin-bottom: 12px; }
+    .topic__status { display: inline-block; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; padding: 4px 10px; border-radius: 3px; }
+    .status--ongoing { background: #e6f0e6; color: var(--mid-green); }
+    .status--upcoming { background: #f0f0e8; color: #666; }
+    .status--funding { background: #f5f0e8; color: #8a6a20; }
+    .status--aspiration { background: #f0eef8; color: #5a4a8a; }
+    .downloads { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+    .download-card { background: var(--dark-green); border-radius: 4px; padding: 32px; display: flex; flex-direction: column; }
+    .download-card__tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 500; margin-bottom: 12px; }
+    .download-card__title { font-size: 22px; font-weight: 500; color: var(--white); line-height: 1.3; margin-bottom: 12px; flex: 1; }
+    .download-card__body { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.72); font-weight: 300; margin-bottom: 24px; }
+    .download-card__link { display: inline-block; background: var(--mid-green); color: var(--white); padding: 10px 20px; border-radius: 3px; font-size: 14px; font-weight: 400; align-self: flex-start; transition: opacity 0.2s; }
+    .download-card__link:hover { opacity: 0.85; }
+    .inprogress { background: var(--off-white); border-radius: 4px; padding: 32px; margin-top: 24px; display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: center; }
+    .inprogress__label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-green); font-weight: 500; margin-bottom: 8px; }
+    .inprogress__title { font-size: 22px; font-weight: 500; color: var(--near-black); line-height: 1.3; }
+    .inprogress__body { font-size: 15px; line-height: 1.65; color: var(--body-muted); font-weight: 300; }
+    .methodology { max-width: 720px; }
+    .methodology p { font-size: 18px; line-height: 1.8; color: var(--body-muted); font-weight: 300; margin-bottom: 24px; }
+    .methodology p strong { font-weight: 500; color: var(--near-black); }
+    @media (max-width: 1024px) {
+      .downloads { grid-template-columns: 1fr; }
+      .inprogress { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .research-hero__title { font-size: 32px; }
+      .topic { grid-template-columns: 1fr; gap: 8px; }
+      .topic__number { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="Meridian17">
+        Meridian17
+      </a>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="research.html" style="color:var(--white)">Research</a>
+        <a href="tools.html">Tools</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="experts.html">Experts</a>
+        <button class="nav__cta" onclick="window.location='mailto:info@meridian17.org'">Contact</button>
+      </div>
+      <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="tools.html">Tools</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="experts.html">Experts</a>
+      <a href="mailto:info@meridian17.org">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="research-hero">
+    <div class="container">
+      <p class="label--white">Research</p>
+      <h1 class="research-hero__title">Business-centred analysis of Africa-Europe cooperation.</h1>
+      <p class="research-hero__sub">Our research starts with a simple question: what makes most sense for business? From there we work outward - into policy, investment, culture, and the conditions that determine whether the Africa-Europe partnership delivers on its potential.</p>
+    </div>
+  </section>
+
+  <!-- Our approach -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="two-col">
+        <div class="methodology">
+          <p class="label">Our approach</p>
+          <p>Meridian17's research is <strong>intentionally action-oriented.</strong> We are not producing analysis for its own sake. Every project is designed with a clear sense of audience, a concrete output, and a dissemination plan that puts findings in front of the people who can act on them.</p>
+          <p>We combine desk research and data analysis with structured expert interviews, stakeholder roundtables, and collaborative writing with affiliated researchers. Where fieldwork or large-scale data collection is required, we pursue it only where external funding is secured.</p>
+          <p>Given our current stage, we do fewer things well rather than many things superficially. Our programme is focused, cost-conscious, and oriented towards maximum policy and business impact.</p>
+        </div>
+        <div>
+          <p class="label">Research cycle</p>
+          <p style="font-size:15px;line-height:1.65;color:var(--body-muted);font-weight:300;margin-bottom:16px">Our current research programme covers the 2026-2027 cycle. Topics have been selected because they address the most critical barriers and opportunities in the Africa-Europe business relationship today.</p>
+          <p style="font-size:15px;line-height:1.65;color:var(--body-muted);font-weight:300;margin-bottom:24px">Outputs are grouped into three thematic clusters: policy and investment frameworks, understanding the relationship, and shared values and long-term foundations.</p>
+          <a href="assets/docs/research-agenda-2026-2027.pdf" class="text-link" target="_blank">Download the full research agenda →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Priority topics -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <p class="label">Priority topics</p>
+      <h2 class="section-title">2026-2027 research programme</h2>
+      <p class="section-body">Five priority topics, grouped into three thematic clusters. Each topic produces a research paper, a policy brief, and at minimum one stakeholder engagement moment.</p>
+      <div class="topic-list">
+
+        <div class="topic">
+          <div class="topic__number">01</div>
+          <div class="topic__content">
+            <h3>The Global Gateway Initiative</h3>
+            <p>The EU's flagship infrastructure and investment initiative positions Africa as a central partner. But is it delivering genuine mutual benefit in practice? We examine the gap between stated objectives and on-the-ground implementation, from both sides of the partnership.</p>
+            <span class="topic__status status--ongoing">Self-started - ongoing</span>
+          </div>
+        </div>
+
+        <div class="topic">
+          <div class="topic__number">02</div>
+          <div class="topic__content">
+            <h3>Addressing penalties: the financial costs of doing business in Africa</h3>
+            <p>European businesses consistently cite risk perception, high financing costs, and regulatory complexity as barriers to deeper engagement with African markets. Many of these barriers are not inherent to African markets - they reflect information gaps and outdated risk frameworks. We take a business-first approach to identifying and addressing them.</p>
+            <span class="topic__status status--upcoming">Self-started - upcoming</span>
+          </div>
+        </div>
+
+        <div class="topic">
+          <div class="topic__number">03</div>
+          <div class="topic__content">
+            <h3>What holds us back? Analysing business flows between the EU and Africa</h3>
+            <p>Trade and investment flows between the EU and Africa remain well below their potential, even compared with EU flows to regions with comparable economic fundamentals. We map what the data shows, compare the African corridor with others, and identify the specific drivers that explain the gap.</p>
+            <span class="topic__status status--funding">Seeking funding</span>
+          </div>
+        </div>
+
+        <div class="topic">
+          <div class="topic__number">04</div>
+          <div class="topic__content">
+            <h3>Culture eats strategy for breakfast: building mutual understanding</h3>
+            <p>Policy frameworks and investment incentives can create the conditions for partnership, but they cannot generate the trust and familiarity that sustain it. People-to-people ties between Africa and Europe are thinner than they could be. This topic examines what it would take to change that.</p>
+            <span class="topic__status status--funding">Seeking funding</span>
+          </div>
+        </div>
+
+        <div class="topic">
+          <div class="topic__number">05</div>
+          <div class="topic__content">
+            <h3>Ensuring common values and common practices</h3>
+            <p>A durable Africa-Europe partnership cannot rest on interests alone. It must also be grounded in shared values and converging standards - on sustainable energy, gender equity, healthcare, youth employment, and education. We examine where alignment exists, where tensions remain, and how genuine dialogue can bridge the gap.</p>
+            <span class="topic__status status--aspiration">Aspirational</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Overarching project - Beat of Business -->
+  <section class="section section--white">
+    <div class="container">
+      <p class="label">Overarching project</p>
+      <h2 class="section-title">The Beat of Business</h2>
+      <div class="two-col">
+        <div>
+          <p style="font-size:18px;line-height:1.8;color:var(--body-muted);font-weight:300;margin-bottom:24px">One of the persistent gaps in the policy debate around Africa-Europe economic partnership is the voice of business itself. The Beat of Business is Meridian17's annual report on the perceived barriers, opportunities, and sentiments of the African business community on doing business with Europe.</p>
+          <p style="font-size:18px;line-height:1.8;color:var(--body-muted);font-weight:300;margin-bottom:24px">Through a questionnaire distributed to Chambers of Commerce across ten African anchor economies - Botswana, Egypt, Ethiopia, Ghana, Kenya, Mauritius, Morocco, Nigeria, Rwanda, and South Africa - followed by in-depth interviews, we build an annual picture of what is working, what is not, and where the greatest opportunities lie.</p>
+          <p style="font-size:18px;line-height:1.8;color:var(--body-muted);font-weight:300">By maintaining a consistent research structure across annual cycles, we will progressively build a multi-year dataset from which a business sentiment index can be derived.</p>
+        </div>
+        <div>
+          <div class="inprogress" style="margin-top:0">
+            <div>
+              <p class="inprogress__label">Now in development</p>
+              <p class="inprogress__title">German business sentiment on South Africa</p>
+            </div>
+            <p class="inprogress__body">A focused research project examining how German businesses perceive and experience the South African market - its opportunities, its barriers, and its potential as an entry point to the broader African continent. Currently in development in partnership with an external funder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="label--white">Downloads</p>
+      <h2 class="section-title--white" style="margin-bottom:40px">Our publications</h2>
+      <div class="downloads">
+        <div class="download-card">
+          <p class="download-card__tag">Whitepaper · 2026</p>
+          <h3 class="download-card__title">The Missing Middle</h3>
+          <p class="download-card__body">Why the study and support of business needs to be included in the African-European focused think tank landscape. Our founding argument for why Meridian17 exists.</p>
+          <a href="assets/docs/missing-middle.pdf" class="download-card__link" target="_blank">Download PDF →</a>
+        </div>
+        <div class="download-card">
+          <p class="download-card__tag">Research agenda · 2026</p>
+          <h3 class="download-card__title">Research Programme 2026-2027</h3>
+          <p class="download-card__body">Our full research programme for the 2026-2027 cycle, covering five priority topics, our overarching Beat of Business project, and our dissemination strategy.</p>
+          <a href="assets/docs/research-agenda-2026-2027.pdf" class="download-card__link" target="_blank">Download PDF →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <p class="label" style="text-align:center">Stay informed</p>
+      <h2 class="newsletter__title">Subscribe to our newsletter</h2>
+      <p class="newsletter__sub">Research, analysis and updates on Africa-Europe business partnership, delivered to your inbox.</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/img/logo.svg" alt="Meridian17">
+            Meridian17
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian - the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="about.html">About</a>
+            <a href="experts.html">Experts</a>
+            <a href="about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="research.html">Research</a>
+            <a href="tools.html">Tools</a>
+            <a href="podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="index.html#newsletter">Newsletter</a>
+            <a href="https://www.linkedin.com/company/meridian17" target="_blank">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Meridian17</span>
+        <span>
+          <a href="privacy.html" style="color:rgba(255,255,255,0.25)">Privacy policy</a> ·
+          <a href="accessibility.html" style="color:rgba(255,255,255,0.25)">Accessibility</a> ·
+          <a href="terms.html" style="color:rgba(255,255,255,0.25)">Terms</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
