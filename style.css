@@ -47,7 +47,7 @@ a { text-decoration: none; }
 .hero { background: var(--dark-green); padding: 80px 0 72px; }
 .hero__inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
 .hero__title { font-size: 52px; font-weight: 500; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px; }
-.hero__title em { font-style: normal; color: var(--bright-green); }
+.hero__title em { font-style: normal; color: #a8d5a2; }
 .hero__sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 580px; font-weight: 300; margin-bottom: 36px; }
 .hero__buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero__tagline { margin-top: 56px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; }
