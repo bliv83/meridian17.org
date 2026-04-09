@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian17 experts - a network of researchers, practitioners and business leaders advancing Africa-Europe partnership.">
+  <title>Experts | Meridian17</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .experts-hero { background: var(--dark-green); padding: 80px 0 72px; }
+    .experts-hero__title { font-size: 52px; font-weight: 500; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px; }
+    .experts-hero__sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 580px; font-weight: 300; }
+    .experts-intro { max-width: 720px; margin-bottom: 56px; }
+    .experts-intro p { font-size: 18px; line-height: 1.8; color: var(--body-muted); font-weight: 300; margin-bottom: 24px; }
+    .experts-intro p strong { font-weight: 500; color: var(--near-black); }
+    .experts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .expert-full-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 32px; display: flex; flex-direction: column; }
+    .expert-full-card__top { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+    .expert-full-avatar { width: 72px; height: 72px; border-radius: 50%; background: #c8d8c8; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 500; color: var(--mid-green); }
+    .expert-full-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .expert-full-card__name { font-size: 18px; font-weight: 500; color: var(--near-black); margin-bottom: 4px; line-height: 1.2; }
+    .expert-full-card__title { font-size: 13px; color: var(--mid-green); font-weight: 500; line-height: 1.4; }
+    .expert-full-card__bio { font-size: 14px; line-height: 1.65; color: var(--body-muted); font-weight: 300; flex: 1; }
+    .expert-tag { display: inline-block; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; padding: 3px 8px; border-radius: 3px; background: #e6f0e6; color: var(--mid-green); margin-bottom: 16px; }
+    .join-section { background: var(--dark-green); border-radius: 4px; padding: 48px; margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .join-section h3 { font-size: 28px; font-weight: 500; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+    .join-section p { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.75); font-weight: 300; }
+    .join-section__right { display: flex; flex-direction: column; gap: 16px; }
+    .join-point { display: flex; align-items: flex-start; gap: 16px; }
+    .join-point__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--bright-green); flex-shrink: 0; margin-top: 7px; }
+    .join-point__text { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.75); font-weight: 300; }
+    @media (max-width: 1024px) {
+      .experts-grid { grid-template-columns: repeat(2, 1fr); }
+      .join-section { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      .experts-hero__title { font-size: 32px; }
+      .experts-grid { grid-template-columns: 1fr; }
+      .expert-full-card__top { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="Meridian17">
+        Meridian17
+      </a>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="tools.html">Tools</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="experts.html" style="color:var(--white)">Experts</a>
+        <button class="nav__cta" onclick="window.location='mailto:info@meridian17.org'">Contact</button>
+      </div>
+      <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="tools.html">Tools</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="experts.html">Experts</a>
+      <a href="mailto:info@meridian17.org">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="experts-hero">
+    <div class="container">
+      <p class="label--white">Our experts</p>
+      <h1 class="experts-hero__title">A network built on shared conviction, not shared employment.</h1>
+      <p class="experts-hero__sub">Meridian17's experts are researchers, practitioners, and business leaders who bring their own expertise and networks to the work of advancing Africa-Europe partnership.</p>
+    </div>
+  </section>
+
+  <!-- Intro and grid -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="experts-intro">
+        <p class="label">Who our experts are</p>
+        <p>Experts affiliated with Meridian17 share a conviction: that the Africa-Europe partnership matters, that business is central to making it work, and that rigorous, independent research is essential to understanding what holds it back and what can move it forward.</p>
+        <p>Their work - whether in academia, business, policy, or the broader public debate - is conducted with <strong>full academic freedom and independence.</strong> Meridian17 is not affiliated with any political party or governmental body, and enters into partnerships only where they support the goals and objectives of the organisation. Our experts reflect that same principle.</p>
+      </div>
+
+      <div class="experts-grid">
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Leadership</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/kelly-alexander.jpg" alt="Dr Kelly Alexander">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Dr Kelly Alexander</p>
+              <p class="expert-full-card__title">President, Meridian17 · GIBS Business School</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">A social scientist who analyses geopolitical shifts and integrates sustainability into economic development. She lectures on Strategy & Sustainability at GIBS Business School and holds a Master's in Development Sociology from Wits University and a PhD in Management & Organisation Studies from Tilburg University.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Gender & Development</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/zuziwe-khuzwayo.jpg" alt="Dr Zuziwe Khuzwayo">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Dr Zuziwe Khuzwayo</p>
+              <p class="expert-full-card__title">Gender Practitioner & Researcher</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">A global feminist gender practitioner with extensive experience in civil society, research, and philanthropy. A trained sociologist, her work centres on the intersections of gender, race, class, and sexuality, with a focus on development challenges in the Global South.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Tourism & Geography</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/egbert-van-der-zee.jpg" alt="Dr Egbert van der Zee">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Dr Egbert van der Zee</p>
+              <p class="expert-full-card__title">Tourism Geography Researcher</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">Studies tourism geography, focusing on how tourism interacts with cities - including the spatial development of Airbnb in South Africa and the influence of reviews on traveller behaviour. He employs GIS, social network, and sentiment analyses to advance sustainable, inclusive tourism.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Sustainable Finance</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/jane-waiyaki.jpg" alt="Jane Waiyaki">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Jane Waiyaki</p>
+              <p class="expert-full-card__title">WWF Global Finance Practice</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">A sustainable finance expert mobilising capital for conservation, climate, and nature solutions at WWF's Global Finance Practice. A 2021 UN Global Compact SDG Pioneer and 2022 One Young World Ambassador, she mentors youth and SMEs on sustainable finance.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">EU Sustainability Policy</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/agnieszka-skorupinska.jpg" alt="Agnieszka Skorupinska">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Agnieszka Skorupinska</p>
+              <p class="expert-full-card__title">EU Sustainable Policy Specialist</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">An expert in EU sustainable policies, specialising in decarbonisation, circular economy, biodiversity, sustainable value chains, and sustainable AI. Passionate about harnessing technology to improve lives in Europe and Africa, she also dedicates her time to social inclusion and nature conservation.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Investment & Banking</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/stanley-anyetei.jpg" alt="Stanley Anyetei">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Stanley Anyetei</p>
+              <p class="expert-full-card__title">TIAS Business School · Signify Foundation</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">Over 15 years of investment and sustainable banking experience across Africa, Europe, and Asia. Previously managed impact portfolios at Triodos and PYMWYMIC, sits on the board of Signify Foundation, lectures on CSR at TIAS Business School, and mentors SMEs in financial sustainability.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Finance & Strategy</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/dakin-parker.jpg" alt="Dakin Parker">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Dakin Parker</p>
+              <p class="expert-full-card__title">Chartered Accountant (SAICA)</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">A Chartered Accountant with 25 years of experience across three continents. He has led initiatives to bring new ideas to post-revenue organisations, expand organisational capacity, and develop people's skills. Holding two Master's degrees, he thrives on challenges once deemed impossible.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Project Finance</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/marie-badiane.jpg" alt="Marie Badiane">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Marie Badiane</p>
+              <p class="expert-full-card__title">Alexander & Partner</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">A lawyer and project finance specialist bridging European capital with African energy and infrastructure projects. Creator of the RUBICUB method, advancing Africa-led development through reverse-engineered finance. A trilingual deal enabler who curates high-level panels and fosters German-French-African business ties.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Healthcare & Research</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/yvette-hlophe.jpg" alt="Dr Yvette Hlophe">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Dr Yvette Hlophe</p>
+              <p class="expert-full-card__title">University of Pretoria</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">A Senior Lecturer in Physiology at the University of Pretoria, specialising in innovative cancer treatments. Her research drives impactful collaborations across Africa and has earned her several accolades, reflecting her commitment to advancing both cancer research and health education.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Diplomacy & Inclusion</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/paul-mbikayi.jpg" alt="Paul Mbikayi">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Paul Mbikayi</p>
+              <p class="expert-full-card__title">Dutch Government · Ambassador of Tolerance</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">The Netherlands' first Ambassador of Tolerance, bridging African and European cultures through his work in the Dutch government. This Dutch-Congolese civil servant champions dialogue and inclusion across multiple ministries, focusing on DEI and tolerance initiatives.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Education & Technology</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/tracey-shiundu.jpg" alt="Tracey Shiundu">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Tracey Shiundu</p>
+              <p class="expert-full-card__title">FunKe Science · Edtech Pioneer</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">Co-Founder and CEO of FunKe Science, an edtech pioneer using interactive kits and AR/VR to transform science learning for over 20,000 children across Africa. A Mastercard Foundation EdTech Fellow and Top 40 Under 40 honoree, she is a passionate advocate for girls in STEM.</p>
+        </div>
+
+        <div class="expert-full-card">
+          <div class="expert-tag">Energy & Sustainability</div>
+          <div class="expert-full-card__top">
+            <div class="expert-full-avatar">
+              <img src="assets/img/experts/alessia-argiolas.jpg" alt="Dr Alessia Argiolas">
+            </div>
+            <div>
+              <p class="expert-full-card__name">Dr Alessia Argiolas</p>
+              <p class="expert-full-card__title">TUM SEED Center</p>
+            </div>
+          </div>
+          <p class="expert-full-card__bio">A postdoctoral researcher at TUM's Chair of Corporate Sustainability and coordinator of the TUM SEED Center. Her Joachim Herz-awarded research examines how off-grid energy ventures drive social impact in Africa and India. She holds a PhD in Management and Innovation from the Catholic University of Milan.</p>
+        </div>
+
+      </div>
+
+      <!-- Join section -->
+      <div class="join-section">
+        <div>
+          <h3>Interested in joining our expert network?</h3>
+          <p>We are actively growing our network of affiliated researchers, practitioners, and business leaders. If your work aligns with our focus on the business of Africa-Europe partnership, we would like to hear from you.</p>
+          <a href="mailto:info@meridian17.org" class="btn btn--outline" style="margin-top:28px;display:inline-block">Get in touch →</a>
+        </div>
+        <div class="join-section__right">
+          <div class="join-point">
+            <div class="join-point__dot"></div>
+            <p class="join-point__text">Full academic and professional freedom - your work remains your own</p>
+          </div>
+          <div class="join-point">
+            <div class="join-point__dot"></div>
+            <p class="join-point__text">Access to a growing network of researchers, policymakers, and business leaders across both continents</p>
+          </div>
+          <div class="join-point">
+            <div class="join-point__dot"></div>
+            <p class="join-point__text">Opportunities to contribute to research, podcast episodes, and events</p>
+          </div>
+          <div class="join-point">
+            <div class="join-point__dot"></div>
+            <p class="join-point__text">A shared commitment to practical outcomes, not just publications</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <p class="label" style="text-align:center">Stay informed</p>
+      <h2 class="newsletter__title">Subscribe to our newsletter</h2>
+      <p class="newsletter__sub">Research, analysis and updates on Africa-Europe business partnership, delivered to your inbox.</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/img/logo.svg" alt="Meridian17">
+            Meridian17
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian - the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="about.html">About</a>
+            <a href="experts.html">Experts</a>
+            <a href="about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="research.html">Research</a>
+            <a href="tools.html">Tools</a>
+            <a href="podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="index.html#newsletter">Newsletter</a>
+            <a href="https://www.linkedin.com/company/meridian17" target="_blank">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Meridian17</span>
+        <span>
+          <a href="privacy.html" style="color:rgba(255,255,255,0.25)">Privacy policy</a> ·
+          <a href="accessibility.html" style="color:rgba(255,255,255,0.25)">Accessibility</a> ·
+          <a href="terms.html" style="color:rgba(255,255,255,0.25)">Terms</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
