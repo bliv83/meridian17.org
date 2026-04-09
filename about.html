@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Meridian17 - a think and do tank focused on the business of Africa-Europe partnership.">
+  <title>About | Meridian17</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-hero { background: var(--dark-green); padding: 80px 0 72px; }
+    .about-hero__title { font-size: 52px; font-weight: 500; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px; }
+    .about-hero__sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 580px; font-weight: 300; }
+    .narrative { max-width: 720px; }
+    .narrative p { font-size: 18px; line-height: 1.8; color: var(--body-muted); font-weight: 300; margin-bottom: 24px; }
+    .narrative p strong { font-weight: 500; color: var(--near-black); }
+    .how-we-work { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .how-card { background: var(--off-white); border-radius: 4px; padding: 32px; }
+    .how-card h3 { font-size: 20px; font-weight: 500; color: var(--near-black); margin-bottom: 12px; }
+    .how-card p { font-size: 15px; line-height: 1.65; color: var(--body-muted); font-weight: 300; }
+    .advisor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .advisor-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 28px; }
+    .advisor-avatar { width: 72px; height: 72px; border-radius: 50%; background: #c8d8c8; margin-bottom: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: var(--mid-green); }
+    .advisor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .advisor-name { font-size: 17px; font-weight: 500; color: var(--near-black); margin-bottom: 4px; }
+    .advisor-title { font-size: 13px; color: var(--mid-green); font-weight: 500; margin-bottom: 12px; }
+    .advisor-bio { font-size: 14px; line-height: 1.65; color: var(--body-muted); font-weight: 300; }
+    .name-origin { background: var(--dark-green); border-radius: 4px; padding: 40px; margin-top: 0; }
+    .name-origin h3 { font-size: 22px; font-weight: 500; color: var(--white); margin-bottom: 16px; }
+    .name-origin p { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.75); font-weight: 300; }
+    @media (max-width: 1024px) {
+      .how-we-work { grid-template-columns: 1fr; }
+      .advisor-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .about-hero__title { font-size: 32px; }
+      .advisor-grid { grid-template-columns: 1fr; }
+      .how-we-work { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="Meridian17">
+        Meridian17
+      </a>
+      <div class="nav__links">
+        <a href="about.html" style="color:var(--white)">About</a>
+        <a href="research.html">Research</a>
+        <a href="tools.html">Tools</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="experts.html">Experts</a>
+        <button class="nav__cta" onclick="window.location='mailto:info@meridian17.org'">Contact</button>
+      </div>
+      <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="tools.html">Tools</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="experts.html">Experts</a>
+      <a href="mailto:info@meridian17.org">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="about-hero">
+    <div class="container">
+      <p class="label--white">About Meridian17</p>
+      <h1 class="about-hero__title">A think and do tank for the business of Africa-Europe partnership.</h1>
+      <p class="about-hero__sub">We are a young organisation with a clear focus: putting business at the centre of the conversation about Africa-Europe cooperation. Deliberately lean, building our research programme and our network in parallel.</p>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="two-col">
+        <div class="narrative">
+          <p class="label">Who we are</p>
+          <p>The think tank landscape on Africa-Europe cooperation is well populated at the extremes. At one end, organisations focused on high-level geopolitical and strategic policy. At the other, organisations working on social and community development. <strong>What is largely missing is business</strong> - the space where policy either works or doesn't, where investment decisions are made, where the partnership between both continents becomes real or remains theoretical.</p>
+          <p>Meridian17 exists to fill that gap. We call it the Missing Middle: the intersection of business reality, market conditions, and policy frameworks that determines whether Africa-Europe cooperation delivers on its promise. It is where GDP is made, where employment is generated, where investment flows or doesn't. And it is, for the most part, absent from the research agenda of existing think tanks.</p>
+          <p>We are not a development organisation, and we are not a pure policy shop. We start with business - its needs, its barriers, its opportunities - and work outward from there. That is what makes us different, and it is what makes the work we do complementary to, rather than duplicative of, the organisations already in this space.</p>
+          <a href="assets/docs/missing-middle.pdf" class="text-link" target="_blank">Read our paper on the Missing Middle →</a>
+        </div>
+        <div class="name-origin">
+          <h3>Why Meridian17?</h3>
+          <p>The 17th meridian is the longest meridian line connecting the European and African continents. It runs from the Arctic through Europe, across the Mediterranean, and down through the length of Africa to the Southern Ocean. For us it is more than a geographic fact - it is a symbol of the connection we are working to strengthen. A line that links both continents, running in both directions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <p class="label">How we work</p>
+      <h2 class="section-title">Think and do - what that means in practice</h2>
+      <p class="section-body">We combine the rigour of academic research with a commitment to real-world outcomes. Every piece of work we produce is designed with a clear sense of who it is for and what it is intended to change.</p>
+      <div class="how-we-work">
+        <div class="how-card">
+          <h3>Research</h3>
+          <p>Applied, business-centred research that fills knowledge gaps in how we understand the Africa-Europe partnership. We draw on a network of affiliated academic researchers and business experts, keeping our own team lean and our outputs focused.</p>
+        </div>
+        <div class="how-card">
+          <h3>Tools</h3>
+          <p>Practical resources built directly from our research - like the EU-Africa Business Navigator, which helps African businesses understand the European regulatory landscape and identify the right entry points for partnership.</p>
+        </div>
+        <div class="how-card">
+          <h3>Dissemination</h3>
+          <p>Research that does not reach the right people does not change anything. Our podcast series, events, and policy briefs are designed to put findings in front of the decision-makers and business leaders who can act on them.</p>
+        </div>
+        <div class="how-card">
+          <h3>Coalition building</h3>
+          <p>We actively connect the actors our research brings together - businesses, policymakers, academics, civil society - because sustained change requires networks, not just publications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our story placeholder -->
+  <section class="section section--white">
+    <div class="container">
+      <div style="max-width:720px">
+        <p class="label">Our story</p>
+        <h2 class="section-title">Where we came from</h2>
+        <p class="section-body" style="max-width:100%"><!-- PLACEHOLDER: founding narrative to be added. See content to-do list. --></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Board of Advisors -->
+  <section class="section section--offwhite" id="advisors">
+    <div class="container">
+      <p class="label">Board of advisors</p>
+      <h2 class="section-title">Our advisors</h2>
+      <p class="section-body">Meridian17 is fortunate to rely on the advice of a growing body of advisors, each an expert in their field. We aim to grow our Board of Advisors to encompass globally recognised experts from our key focus areas.</p>
+      <div class="advisor-grid">
+        <div class="advisor-card">
+          <div class="advisor-avatar">
+            <img src="assets/img/advisors/edem-adzogenu.jpg" alt="Dr Edem Adzogenu">
+          </div>
+          <p class="advisor-name">Dr Edem Adzogenu</p>
+          <p class="advisor-title">Investment Facilitation & Government Affairs</p>
+          <p class="advisor-bio">An accomplished investment facilitation and government affairs specialist who has advised African Heads of State, Fortune 500 companies, G7 countries, and African regional institutions. Under his leadership, AfroChampions has become a leading public-private partnership platform working alongside the African Union.</p>
+        </div>
+        <div class="advisor-card">
+          <div class="advisor-avatar">
+            <img src="assets/img/advisors/marleen-dekker.jpg" alt="Prof Marleen Dekker">
+          </div>
+          <p class="advisor-name">Prof Marleen Dekker</p>
+          <p class="advisor-title">Inclusive Development in Africa, Leiden University</p>
+          <p class="advisor-bio">Professor of Inclusive Development in Africa at Leiden University and Director of the African Studies Centre Leiden. A human geographer with a PhD in Development Economics, she studies how social norms and networks shape market access and local socio-economic development.</p>
+        </div>
+        <div class="advisor-card">
+          <div class="advisor-avatar">
+            <img src="assets/img/advisors/georja-calvin-smith.jpg" alt="Georja Calvin-Smith">
+          </div>
+          <p class="advisor-name">Georja Calvin-Smith</p>
+          <p class="advisor-title">Journalist & Broadcaster, France 24</p>
+          <p class="advisor-bio">A Paris-based journalist, event moderator and TV news presenter with over two decades in international current affairs broadcasting. She currently produces and anchors the daily Eye on Africa bulletin at France 24 and presents the weekly Across Africa magazine show.</p>
+        </div>
+        <div class="advisor-card">
+          <div class="advisor-avatar">
+            <img src="assets/img/advisors/olufunso-somorin.jpg" alt="Dr Olufunso Somorin">
+          </div>
+          <p class="advisor-name">Dr Olufunso Somorin</p>
+          <p class="advisor-title">African Development Bank</p>
+          <p class="advisor-bio">Regional Principal Officer at the African Development Bank, leading climate change, green growth, and carbon markets initiatives in Eastern Africa. He has overseen 300+ development projects worth over USD 20 billion and serves on the UN Secretary General's Taskforce Expert Group on Net Zero Policy.</p>
+        </div>
+        <div class="advisor-card">
+          <div class="advisor-avatar">
+            <img src="assets/img/advisors/kelly-alexander.jpg" alt="Dr Kelly Alexander">
+          </div>
+          <p class="advisor-name">Dr Kelly Alexander</p>
+          <p class="advisor-title">President, Meridian17</p>
+          <p class="advisor-bio">A social scientist who analyses geopolitical shifts and integrates sustainability into economic development. She lectures on Strategy & Sustainability at GIBS Business School and holds a PhD in Management & Organisation Studies from Tilburg University.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <p class="label" style="text-align:center">Stay informed</p>
+      <h2 class="newsletter__title">Subscribe to our newsletter</h2>
+      <p class="newsletter__sub">Research, analysis and updates on Africa-Europe business partnership, delivered to your inbox.</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/img/logo.svg" alt="Meridian17">
+            Meridian17
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian - the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="about.html">About</a>
+            <a href="experts.html">Experts</a>
+            <a href="about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="research.html">Research</a>
+            <a href="tools.html">Tools</a>
+            <a href="podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="index.html#newsletter">Newsletter</a>
+            <a href="https://www.linkedin.com/company/meridian17" target="_blank">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Meridian17</span>
+        <span>
+          <a href="privacy.html" style="color:rgba(255,255,255,0.25)">Privacy policy</a> ·
+          <a href="accessibility.html" style="color:rgba(255,255,255,0.25)">Accessibility</a> ·
+          <a href="terms.html" style="color:rgba(255,255,255,0.25)">Terms</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
