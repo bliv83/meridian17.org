@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian17 tools - practical resources for businesses navigating Africa-Europe partnership.">
+  <title>Tools | Meridian17</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tools-hero { background: var(--dark-green); padding: 80px 0 72px; }
+    .tools-hero__title { font-size: 52px; font-weight: 500; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px; }
+    .tools-hero__sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 580px; font-weight: 300; }
+    .tool-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .tool-feature__visual { background: var(--off-white); border-radius: 4px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 320px; text-align: center; border: 1px solid var(--border); }
+    .tool-feature__visual svg { margin-bottom: 20px; }
+    .tool-feature__visual p { font-size: 14px; color: var(--body-muted); font-weight: 300; line-height: 1.6; max-width: 260px; }
+    .tool-status { display: inline-flex; align-items: center; gap: 8px; background: #f5f0e8; color: #8a6a20; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; padding: 5px 12px; border-radius: 3px; margin-bottom: 20px; }
+    .tool-status__dot { width: 6px; height: 6px; border-radius: 50%; background: #8a6a20; }
+    .tool-title { font-size: 36px; font-weight: 500; color: var(--near-black); line-height: 1.2; margin-bottom: 20px; }
+    .tool-body { font-size: 17px; line-height: 1.8; color: var(--body-muted); font-weight: 300; margin-bottom: 24px; }
+    .tool-features { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; margin-bottom: 32px; }
+    .tool-feature-point { display: flex; align-items: flex-start; gap: 16px; }
+    .tool-feature-point__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mid-green); flex-shrink: 0; margin-top: 7px; }
+    .tool-feature-point__text { font-size: 15px; line-height: 1.65; color: var(--body-muted); font-weight: 300; }
+    .tool-feature-point__text strong { font-weight: 500; color: var(--near-black); }
+    .notify-form { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .notify-form input { flex: 1; min-width: 200px; padding: 11px 16px; border: 1px solid var(--border); border-radius: 3px; font-size: 14px; font-family: 'Heebo', sans-serif; background: var(--white); }
+    .notify-form input:focus { outline: none; border-color: var(--mid-green); }
+    .notify-form button { background: var(--dark-green); color: var(--white); padding: 11px 20px; border: none; border-radius: 3px; font-size: 14px; font-family: 'Heebo', sans-serif; cursor: pointer; white-space: nowrap; }
+    .notify-label { font-size: 14px; color: var(--body-muted); font-weight: 300; margin-bottom: 10px; }
+    .tools-philosophy { max-width: 720px; }
+    .tools-philosophy p { font-size: 18px; line-height: 1.8; color: var(--body-muted); font-weight: 300; margin-bottom: 24px; }
+    .tools-philosophy p strong { font-weight: 500; color: var(--near-black); }
+    .future-tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .future-tool-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 28px; }
+    .future-tool-card h3 { font-size: 18px; font-weight: 500; color: var(--near-black); margin-bottom: 10px; line-height: 1.3; }
+    .future-tool-card p { font-size: 14px; line-height: 1.65; color: var(--body-muted); font-weight: 300; }
+    .future-tool-card__tag { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; color: var(--body-muted); margin-bottom: 12px; }
+    @media (max-width: 1024px) {
+      .tool-feature { grid-template-columns: 1fr; gap: 40px; }
+      .future-tools { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .tools-hero__title { font-size: 32px; }
+      .tool-title { font-size: 28px; }
+      .future-tools { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="Meridian17">
+        Meridian17
+      </a>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="tools.html" style="color:var(--white)">Tools</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="experts.html">Experts</a>
+        <button class="nav__cta" onclick="window.location='mailto:info@meridian17.org'">Contact</button>
+      </div>
+      <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="tools.html">Tools</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="experts.html">Experts</a>
+      <a href="mailto:info@meridian17.org">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="tools-hero">
+    <div class="container">
+      <p class="label--white">Tools</p>
+      <h1 class="tools-hero__title">Research is only useful if it leads somewhere.</h1>
+      <p class="tools-hero__sub">Alongside our research and podcast, Meridian17 builds practical tools that help businesses, policymakers, and organisations navigate the Africa-Europe partnership in practice - not just in theory.</p>
+    </div>
+  </section>
+
+  <!-- Navigator feature -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="tool-feature">
+        <div class="tool-feature__visual">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" stroke="#c8d8c8" stroke-width="1"/>
+            <circle cx="32" cy="32" r="16" stroke="#026203" stroke-width="1" stroke-dasharray="4 3"/>
+            <circle cx="32" cy="32" r="4" fill="#026203"/>
+            <line x1="32" y1="4" x2="32" y2="60" stroke="#c8d8c8" stroke-width="0.5"/>
+            <line x1="4" y1="32" x2="60" y2="32" stroke="#c8d8c8" stroke-width="0.5"/>
+            <circle cx="44" cy="20" r="3" fill="#028203"/>
+            <circle cx="20" cy="44" r="3" fill="#028203"/>
+          </svg>
+          <p>The Africa-Europe Business Navigator is currently in development. Sign up below to be notified when it launches.</p>
+        </div>
+        <div>
+          <div class="tool-status">
+            <div class="tool-status__dot"></div>
+            In development
+          </div>
+          <h2 class="tool-title">The Africa-Europe Business Navigator</h2>
+          <p class="tool-body">African businesses looking to engage with European partners face a complex landscape - regulatory requirements, due diligence standards, entry points that vary by sector and by country. Most of the information exists, but it is scattered, technical, and written for specialists rather than practitioners.</p>
+          <p class="tool-body">The Africa-Europe Business Navigator changes that. It is a guided, interactive tool that helps African businesses understand what European partnership actually requires in practice - and where to start.</p>
+
+          <div class="tool-features">
+            <div class="tool-feature-point">
+              <div class="tool-feature-point__dot"></div>
+              <p class="tool-feature-point__text"><strong>Sector-specific guidance</strong> on the European regulatory environment most relevant to your business</p>
+            </div>
+            <div class="tool-feature-point">
+              <div class="tool-feature-point__dot"></div>
+              <p class="tool-feature-point__text"><strong>A branching questionnaire</strong> that tailors the information to your specific situation and objectives</p>
+            </div>
+            <div class="tool-feature-point">
+              <div class="tool-feature-point__dot"></div>
+              <p class="tool-feature-point__text"><strong>Plain language explanations</strong> of EU standards, due diligence requirements, and entry points for partnership</p>
+            </div>
+            <div class="tool-feature-point">
+              <div class="tool-feature-point__dot"></div>
+              <p class="tool-feature-point__text"><strong>Practical next steps</strong> - not just information, but a clear sense of what to do with it</p>
+            </div>
+          </div>
+
+          <p class="notify-label">Be notified when the Navigator launches:</p>
+          <form class="notify-form" onsubmit="return false;">
+            <input type="email" placeholder="Your email address" aria-label="Email address">
+            <button type="submit">Notify me</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our approach to tools -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <div class="two-col">
+        <div class="tools-philosophy">
+          <p class="label">Our approach</p>
+          <h2 class="section-title">Tools built from research, not alongside it.</h2>
+          <p>Most think tanks produce research and leave it to others to turn it into practice. We do not think that is good enough. Every tool Meridian17 builds grows directly out of our research - it is a practical expression of what the evidence shows and what businesses actually need.</p>
+          <p>The Navigator is the first example of this. It is built on our research into the barriers African businesses face when engaging with European partners, and on direct input from businesses who have navigated - or tried to navigate - that landscape themselves.</p>
+          <p>More tools will follow, each rooted in a specific research question and designed for a specific user. <strong>If you have a need that you think a Meridian17 tool could address, we would like to hear from you.</strong></p>
+          <a href="mailto:info@meridian17.org" class="text-link" style="display:inline-block;margin-top:8px">Get in touch →</a>
+        </div>
+        <div>
+          <p class="label">What comes next</p>
+          <p style="font-size:16px;line-height:1.7;color:var(--body-muted);font-weight:300;margin-bottom:24px">The Navigator is our first tool. As our research programme develops, we will build additional tools that translate findings into practical resources. Below are the areas we are exploring for future development.</p>
+          <div class="future-tools" style="margin-top:0">
+            <div class="future-tool-card">
+              <p class="future-tool-card__tag">Exploring</p>
+              <h3>Investment risk explorer</h3>
+              <p>A tool helping European investors understand and contextualise risk perceptions around African markets - comparing perceived risk with actual investment performance data.</p>
+            </div>
+            <div class="future-tool-card">
+              <p class="future-tool-card__tag">Exploring</p>
+              <h3>Business sentiment tracker</h3>
+              <p>An interactive dashboard drawing on our Beat of Business annual data, allowing users to track how African business sentiment toward European partnership evolves over time.</p>
+            </div>
+            <div class="future-tool-card">
+              <p class="future-tool-card__tag">Exploring</p>
+              <h3>Partnership matchmaker</h3>
+              <p>A structured resource helping African and European businesses identify potential partners based on sector, geography, and strategic objectives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <p class="label" style="text-align:center">Stay informed</p>
+      <h2 class="newsletter__title">Be the first to know when tools launch</h2>
+      <p class="newsletter__sub">Subscribe to our newsletter for updates on the Navigator and future tools.</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/img/logo.svg" alt="Meridian17">
+            Meridian17
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian - the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="about.html">About</a>
+            <a href="experts.html">Experts</a>
+            <a href="about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="research.html">Research</a>
+            <a href="tools.html">Tools</a>
+            <a href="podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="index.html#newsletter">Newsletter</a>
+            <a href="https://www.linkedin.com/company/meridian17" target="_blank">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Meridian17</span>
+        <span>
+          <a href="privacy.html" style="color:rgba(255,255,255,0.25)">Privacy policy</a> ·
+          <a href="accessibility.html" style="color:rgba(255,255,255,0.25)">Accessibility</a> ·
+          <a href="terms.html" style="color:rgba(255,255,255,0.25)">Terms</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
