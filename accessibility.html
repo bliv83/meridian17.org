@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian17 accessibility statement.">
+  <title>Accessibility | Meridian17</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-hero { background: var(--dark-green); padding: 64px 0 56px; }
+    .legal-hero h1 { font-size: 42px; font-weight: 500; color: var(--white); line-height: 1.1; margin-bottom: 12px; }
+    .legal-hero p { font-size: 15px; color: rgba(255,255,255,0.55); font-weight: 300; }
+    .legal-body { max-width: 720px; }
+    .legal-body h2 { font-size: 22px; font-weight: 500; color: var(--near-black); margin-top: 40px; margin-bottom: 12px; }
+    .legal-body p { font-size: 16px; line-height: 1.8; color: var(--body-muted); font-weight: 300; margin-bottom: 16px; }
+    .legal-body ul { margin: 0 0 16px 20px; }
+    .legal-body ul li { font-size: 16px; line-height: 1.8; color: var(--body-muted); font-weight: 300; margin-bottom: 8px; }
+    .legal-body a { color: var(--mid-green); border-bottom: 1px solid var(--mid-green); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="Meridian17">
+        Meridian17
+      </a>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="tools.html">Tools</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="experts.html">Experts</a>
+        <button class="nav__cta" onclick="window.location='mailto:info@meridian17.org'">Contact</button>
+      </div>
+      <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="tools.html">Tools</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="experts.html">Experts</a>
+      <a href="mailto:info@meridian17.org">Contact</a>
+    </div>
+  </nav>
+
+  <section class="legal-hero">
+    <div class="container">
+      <h1>Accessibility Statement</h1>
+      <p>Last updated: April 2026</p>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="legal-body">
+
+        <p>Meridian17 is committed to making its website accessible to as many people as possible, including those with disabilities. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA.</p>
+
+        <h2>What we have done</h2>
+        <p>In building this website, we have taken the following steps to improve accessibility:</p>
+        <ul>
+          <li>Used semantic HTML elements to provide clear document structure</li>
+          <li>Provided descriptive alt text for all meaningful images</li>
+          <li>Ensured sufficient colour contrast between text and background colours</li>
+          <li>Made all interactive elements accessible by keyboard</li>
+          <li>Used clear, plain language throughout</li>
+          <li>Ensured the site works at different text sizes and zoom levels</li>
+          <li>Provided aria-labels on icon-only buttons and controls</li>
+        </ul>
+
+        <h2>Known limitations</h2>
+        <p>We are aware of the following limitations and are working to address them:</p>
+        <ul>
+          <li>Some PDF documents linked from this site may not be fully accessible to screen readers. We will work to improve this as we update our publications.</li>
+          <li>The website is currently available in English only. We hope to add language options in the future.</li>
+        </ul>
+
+        <h2>How to get help</h2>
+        <p>If you experience any difficulty accessing content on our website, or if you need information in a different format, please contact us at <a href="mailto:info@meridian17.org">info@meridian17.org</a>. We will do our best to provide the information you need in an accessible format.</p>
+
+        <h2>Feedback</h2>
+        <p>We welcome feedback on the accessibility of our website. If you find something that could be improved, please let us know at <a href="mailto:info@meridian17.org">info@meridian17.org</a>. We take all feedback seriously and will aim to respond within 10 working days.</p>
+
+        <h2>Enforcement</h2>
+        <p>If you are not satisfied with our response to an accessibility complaint, you may contact the relevant national equality body in your country.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/img/logo.svg" alt="Meridian17">
+            Meridian17
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian - the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="about.html">About</a>
+            <a href="experts.html">Experts</a>
+            <a href="about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="research.html">Research</a>
+            <a href="tools.html">Tools</a>
+            <a href="podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="index.html#newsletter">Newsletter</a>
+            <a href="https://www.linkedin.com/company/meridian17" target="_blank">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Meridian17</span>
+        <span>
+          <a href="privacy.html" style="color:rgba(255,255,255,0.25)">Privacy policy</a> ·
+          <a href="accessibility.html" style="color:rgba(255,255,255,0.25)">Accessibility</a> ·
+          <a href="terms.html" style="color:rgba(255,255,255,0.25)">Terms</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
