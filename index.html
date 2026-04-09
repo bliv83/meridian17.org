@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian17 is a think and do tank focused on the business of Africa-Europe partnership.">
+  <title>Meridian17 | Africa-Europe Business Partnership</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="Meridian17">
+        Meridian17
+      </a>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="tools.html">Tools</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="experts.html">Experts</a>
+        <button class="nav__cta" onclick="window.location='mailto:info@meridian17.org'">Contact</button>
+      </div>
+      <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="tools.html">Tools</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="experts.html">Experts</a>
+      <a href="mailto:info@meridian17.org">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">
+        Africa and Europe work<br>
+        better together.<br>
+        <em>Business is where that happens.</em>
+      </h1>
+      <p class="hero__sub">Meridian17 is a think and do tank focused on the business of Africa-Europe partnership. We research what holds it back, build tools that help it move forward, and make the case that business belongs at the centre of this conversation.</p>
+      <div class="hero__buttons">
+        <a href="research.html" class="btn btn--solid">Our research</a>
+        <a href="about.html" class="btn btn--outline">What we do</a>
+      </div>
+      <div class="hero__tagline">Advancing African-European Partnership</div>
+    </div>
+  </section>
+
+  <!-- Why we exist -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <p class="label">Why we exist</p>
+          <h2 class="section-title">There is a missing middle in how we think about Africa-Europe cooperation.</h2>
+          <p class="section-body">Most think tanks approach this relationship through the lens of policy or development. Neither puts business at the centre - yet business is where policy either works or doesn't. GDP, employment, investment: these are all measures of how well business operates. We call this gap the Missing Middle, and it is what Meridian17 is here to address.</p>
+          <a href="assets/docs/missing-middle.pdf" class="text-link" target="_blank">Read our paper on the Missing Middle →</a>
+        </div>
+        <div>
+          <img src="assets/img/missing-middle-map.png" alt="The Missing Middle - think tank landscape map" style="width:100%;border-radius:4px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <p class="label">Our work</p>
+      <h2 class="section-title" style="margin-bottom:40px">What we do</h2>
+      <div class="three-col">
+        <div class="card">
+          <p class="card__tag">Research</p>
+          <h3 class="card__title">Business-centred analysis of Africa-Europe cooperation</h3>
+          <p class="card__body">We research what holds the partnership back - from risk penalties and investment barriers to the cultural gaps that policy frameworks cannot fix alone.</p>
+          <a href="research.html" class="card__link">Our research agenda →</a>
+        </div>
+        <div class="card">
+          <p class="card__tag">Tools</p>
+          <h3 class="card__title">Practical resources for businesses navigating the partnership</h3>
+          <p class="card__body">The EU-Africa Business Navigator helps African businesses understand the European regulatory landscape and find the right entry points for partnership.</p>
+          <a href="tools.html" class="card__link">Try the navigator →</a>
+        </div>
+        <div class="card">
+          <p class="card__tag">Podcast</p>
+          <h3 class="card__title">Conversations that turn research into action</h3>
+          <p class="card__body">Our podcast series brings researchers, policymakers and business leaders together to discuss what the evidence shows and what needs to change.</p>
+          <a href="podcast.html" class="card__link">Listen now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current work -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="label--white">Current work</p>
+      <h2 class="section-title--white" style="margin-bottom:40px">What we are working on</h2>
+      <div class="three-col">
+        <div class="card card--dark">
+          <p class="card__tag">Published</p>
+          <h3 class="card__title">The Missing Middle</h3>
+          <p class="card__body">Why the study and support of business needs to be included in the African-European focused think tank landscape.</p>
+          <a href="assets/docs/missing-middle.pdf" class="card__link" target="_blank">Download →</a>
+        </div>
+        <div class="card card--dark">
+          <p class="card__tag">Research agenda</p>
+          <h3 class="card__title">Research Programme 2026-2027</h3>
+          <p class="card__body">Five priority topics spanning the Global Gateway, investment risk penalties, business flows, cultural barriers, and shared values.</p>
+          <a href="assets/docs/research-agenda-2026-2027.pdf" class="card__link" target="_blank">Download →</a>
+        </div>
+        <div class="card card--dark">
+          <p class="card__tag">In progress</p>
+          <h3 class="card__title">German business sentiment on South Africa</h3>
+          <p class="card__body">A new research project examining how German businesses perceive and experience the South African market - currently in development.</p>
+          <a href="about.html" class="card__link">Find out more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Podcast -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="podcast-row">
+        <div class="podcast-cover">
+          <img src="assets/img/podcast-cover.jpg" alt="Meridian17 Podcast - Journalism in Africa">
+        </div>
+        <div>
+          <p class="label">Podcast</p>
+          <p style="font-size:13px;color:var(--mid-green);font-weight:500;margin-bottom:8px">Series 1 - Now available</p>
+          <h2 class="section-title">Journalism in Africa: press freedom, media economics, and the European gaze</h2>
+          <p class="section-body">Ten episodes examining press freedom, the economics of journalism, disinformation, and how African and European media ecosystems relate to each other. Hosted by Georja Calvin-Smith, anchor of France 24's Eye on Africa.</p>
+          <a href="podcast.html" class="text-link">Listen to the series →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experts -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <p class="label">Our experts</p>
+      <h2 class="section-title" style="margin-bottom:40px">Who we work with</h2>
+      <div class="expert-grid">
+        <div class="expert-card">
+          <div class="expert-avatar">
+            <img src="assets/img/experts/kelly-alexander.jpg" alt="Dr Kelly Alexander">
+          </div>
+          <p class="expert-name">Dr Kelly Alexander</p>
+          <p class="expert-role">President, Meridian17</p>
+        </div>
+        <div class="expert-card">
+          <div class="expert-avatar">
+            <img src="assets/img/experts/zuziwe-khuzwayo.jpg" alt="Dr Zuziwe Khuzwayo">
+          </div>
+          <p class="expert-name">Dr Zuziwe Khuzwayo</p>
+          <p class="expert-role">Gender &amp; Development</p>
+        </div>
+        <div class="expert-card">
+          <div class="expert-avatar">
+            <img src="assets/img/experts/stanley-anyetei.jpg" alt="Stanley Anyetei">
+          </div>
+          <p class="expert-name">Stanley Anyetei</p>
+          <p class="expert-role">Sustainable Finance</p>
+        </div>
+        <div class="expert-card">
+          <div class="expert-avatar">
+            <img src="assets/img/experts/marie-badiane.jpg" alt="Marie Badiane">
+          </div>
+          <p class="expert-name">Marie Badiane</p>
+          <p class="expert-role">Project Finance</p>
+        </div>
+      </div>
+      <div style="margin-top:32px">
+        <a href="experts.html" class="text-link">Meet all our experts →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <p class="label" style="text-align:center">Stay informed</p>
+      <h2 class="newsletter__title">Subscribe to our newsletter</h2>
+      <p class="newsletter__sub">Research, analysis and updates on Africa-Europe business partnership, delivered to your inbox.</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/img/logo.svg" alt="Meridian17">
+            Meridian17
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian - the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="about.html">About</a>
+            <a href="experts.html">Experts</a>
+            <a href="about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="research.html">Research</a>
+            <a href="tools.html">Tools</a>
+            <a href="podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="#newsletter">Newsletter</a>
+            <a href="https://www.linkedin.com/company/meridian17" target="_blank">LinkedIn</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Meridian17</span>
+        <span>
+          <a href="privacy.html" style="color:rgba(255,255,255,0.25)">Privacy policy</a> ·
+          <a href="accessibility.html" style="color:rgba(255,255,255,0.25)">Accessibility</a> ·
+          <a href="terms.html" style="color:rgba(255,255,255,0.25)">Terms</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
