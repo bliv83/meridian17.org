@@ -26,7 +26,7 @@ EU27 = {
     208: ("DK", "Denmark"),
     233: ("EE", "Estonia"),
     246: ("FI", "Finland"),
-    250: ("FR", "France"),
+    251: ("FR", "France"),
     276: ("DE", "Germany"),
     300: ("GR", "Greece"),
     348: ("HU", "Hungary"),

@@ -576,6 +576,12 @@
     "value_usd": 8834840078.88
   },
   {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2022,
+    "value_usd": 848734034.0
+  },
+  {
     "partner_name": "Lithuania",
     "iso2": "LT",
     "year": 2022,
@@ -654,6 +660,12 @@
     "value_usd": 123543296.9
   },
   {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2022,
+    "value_usd": 665858681.15
+  },
+  {
     "partner_name": "Greece",
     "iso2": "GR",
     "year": 2022,
@@ -684,6 +696,12 @@
     "value_usd": 18270.95
   },
   {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2022,
+    "value_usd": 35.46
+  },
+  {
     "partner_name": "Italy",
     "iso2": "IT",
     "year": 2022,
@@ -706,6 +724,12 @@
     "iso2": "GR",
     "year": 2022,
     "value_usd": 4441701.21
+  },
+  {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2022,
+    "value_usd": 179866543.95
   },
   {
     "partner_name": "Latvia",
@@ -744,6 +768,12 @@
     "value_usd": 1492521.85
   },
   {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2022,
+    "value_usd": 3008773.44
+  },
+  {
     "partner_name": "Ireland",
     "iso2": "IE",
     "year": 2022,
@@ -778,6 +808,12 @@
     "iso2": "LV",
     "year": 2023,
     "value_usd": 110711377.23
+  },
+  {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2023,
+    "value_usd": 637583337.65
   },
   {
     "partner_name": "Germany",
@@ -822,6 +858,12 @@
     "value_usd": 177162.42
   },
   {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2023,
+    "value_usd": 183360171.92
+  },
+  {
     "partner_name": "Germany",
     "iso2": "DE",
     "year": 2023,
@@ -864,6 +906,12 @@
     "value_usd": 110534214.81
   },
   {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2023,
+    "value_usd": 454222536.52
+  },
+  {
     "partner_name": "Ireland",
     "iso2": "IE",
     "year": 2023,
@@ -880,6 +928,18 @@
     "iso2": "IT",
     "year": 2023,
     "value_usd": 38860764.94
+  },
+  {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2023,
+    "value_usd": 628.18
+  },
+  {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2023,
+    "value_usd": 1.03
   },
   {
     "partner_name": "Italy",
@@ -1068,6 +1128,12 @@
     "value_usd": 34349368.9
   },
   {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2024,
+    "value_usd": 555740301.03
+  },
+  {
     "partner_name": "Greece",
     "iso2": "GR",
     "year": 2024,
@@ -1078,6 +1144,12 @@
     "iso2": "DE",
     "year": 2024,
     "value_usd": 7077750905.01
+  },
+  {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2024,
+    "value_usd": 186465885.08
   },
   {
     "partner_name": "Lithuania",
@@ -1102,6 +1174,12 @@
     "iso2": "IT",
     "year": 2024,
     "value_usd": 803109793.15
+  },
+  {
+    "partner_name": "France",
+    "iso2": "FR",
+    "year": 2024,
+    "value_usd": 369274415.96
   },
   {
     "partner_name": "Luxembourg",
