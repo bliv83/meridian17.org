@@ -55,7 +55,7 @@ a { text-decoration: none; }
 /* Buttons */
 .btn { display: inline-block; padding: 12px 24px; font-size: 15px; font-family: 'Heebo', sans-serif; font-weight: 400; border-radius: 3px; cursor: pointer; transition: opacity 0.2s; border: none; }
 .btn:hover { opacity: 0.88; }
-.btn--solid { background: var(--mid-green); color: var(--white); }
+.btn--solid { background: #ffffff; color: #024203; }
 .btn--outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
 .btn--outline-dark { background: transparent; color: var(--mid-green); border: 1px solid var(--mid-green); }
 
