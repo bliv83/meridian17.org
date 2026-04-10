@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="South Africa's export trade flows to EU member states — annual data from UN Comtrade.">
+  <title>SA–EU Trade Data | Meridian17</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .trade-hero { background: var(--dark-green); padding: 80px 0 72px; }
+    .trade-hero__inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+    .trade-hero__title { font-size: 52px; font-weight: 500; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px; }
+    .trade-hero__title em { font-style: normal; color: #a8d5a2; }
+    .trade-hero__sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 580px; font-weight: 300; }
+
+    .chart-section { padding: 72px 0; background: var(--white); }
+    .chart-section__inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+
+    .chart-controls { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+    .chart-controls__label { font-size: 13px; color: var(--body-muted); font-weight: 300; text-transform: uppercase; letter-spacing: 0.07em; }
+    .year-toggle { display: flex; gap: 4px; background: var(--off-white); border-radius: 4px; padding: 3px; }
+    .year-btn {
+      padding: 7px 18px;
+      font-size: 14px;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 400;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--body-muted);
+      transition: background 0.15s, color 0.15s;
+    }
+    .year-btn.active {
+      background: var(--dark-green);
+      color: var(--white);
+    }
+    .year-btn:hover:not(.active) { background: var(--border); color: var(--near-black); }
+
+    .chart-wrapper { background: var(--off-white); border: 1px solid var(--border); border-radius: 4px; padding: 8px; min-height: 480px; }
+
+    .commentary-section { padding: 56px 0; background: var(--off-white); }
+    .commentary-section__inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+    .commentary-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--body-muted); font-weight: 500; margin-bottom: 16px; }
+    #commentary {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--body-muted);
+      font-weight: 300;
+      max-width: 760px;
+    }
+
+    .source-section { padding: 40px 0 56px; background: var(--white); border-top: 1px solid var(--border); }
+    .source-section__inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+    .source-note { font-size: 13px; line-height: 1.8; color: var(--body-muted); font-weight: 300; max-width: 760px; }
+    .source-note a { color: var(--mid-green); text-decoration: underline; text-underline-offset: 2px; }
+    .source-note strong { font-weight: 500; color: var(--near-black); }
+
+    @media (max-width: 1024px) {
+      .trade-hero__inner, .chart-section__inner,
+      .commentary-section__inner, .source-section__inner { padding: 0 32px; }
+      .trade-hero__title { font-size: 42px; }
+    }
+    @media (max-width: 640px) {
+      .trade-hero__inner, .chart-section__inner,
+      .commentary-section__inner, .source-section__inner { padding: 0 20px; }
+      .trade-hero { padding: 56px 0 48px; }
+      .trade-hero__title { font-size: 32px; }
+      .trade-hero__sub { font-size: 16px; }
+      .chart-section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/img/logo.svg" alt="Meridian17">
+      </a>
+      <div class="nav__links">
+        <a href="../about.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../tools.html">Tools</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../experts.html">Experts</a>
+        <a href="mailto:info@meridian17.org" class="nav__cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="trade-hero">
+    <div class="trade-hero__inner">
+      <h1 class="trade-hero__title">
+        South Africa's exports<br>to the <em>European Union</em>
+      </h1>
+      <p class="trade-hero__sub">
+        Annual trade flows from South Africa to individual EU member states,
+        sourced from the UN Comtrade database. Values in USD FOB.
+      </p>
+    </div>
+  </section>
+
+  <!-- Chart -->
+  <section class="chart-section">
+    <div class="chart-section__inner">
+
+      <div class="chart-controls">
+        <span class="chart-controls__label">Year</span>
+        <div class="year-toggle">
+          <button class="year-btn" data-year="2022">2022</button>
+          <button class="year-btn" data-year="2023">2023</button>
+          <button class="year-btn active" data-year="2024">2024</button>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <div id="chart" style="width:100%;height:480px;"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Commentary -->
+  <section class="commentary-section">
+    <div class="commentary-section__inner">
+      <p class="commentary-label">Monthly commentary</p>
+      <p id="commentary"></p>
+    </div>
+  </section>
+
+  <!-- Source note -->
+  <section class="source-section">
+    <div class="source-section__inner">
+      <p class="source-note">
+        <strong>Source:</strong>
+        <a href="https://comtradeapi.un.org" target="_blank" rel="noopener">UN Comtrade</a>
+        — public preview API, annual trade in goods (HS classification), reporter: South Africa (ZA),
+        flow: exports (X), all commodity codes combined (TOTAL), filtered to standard customs procedure (C00).
+        Data retrieved April 2026.
+        <br><br>
+        <strong>Note on estimated values:</strong> Some records carry
+        <code>isReported: false</code> and a legacy estimation flag, indicating the value is
+        derived from mirror data (i.e. reported by the partner country as an import) rather than
+        directly reported by South Africa. These figures are included as the best available
+        approximation but should be interpreted with caution.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="../assets/img/logo.svg" alt="Meridian17">
+          </div>
+          <p class="footer__desc">A think and do tank advancing the business of Africa-Europe partnership. Named after the 17th meridian — the longest meridian connecting both continents.</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Organisation</h4>
+            <a href="../about.html">About</a>
+            <a href="../experts.html">Experts</a>
+            <a href="../about.html#advisors">Board of advisors</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Work</h4>
+            <a href="../research.html">Research</a>
+            <a href="../tools.html">Tools</a>
+            <a href="../podcast.html">Podcast</a>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Connect</h4>
+            <a href="mailto:info@meridian17.org">Contact</a>
+            <a href="../privacy.html">Privacy</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2025 Meridian17. All rights reserved.</span>
+        <span>Data: UN Comtrade</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+
+  <script>
+    const GREEN_PALETTE = [
+      '#024203', '#026203', '#028203', '#03a203', '#04c204',
+      '#05e205', '#2df22d', '#70f770', '#a8d5a2', '#c8e8c8'
+    ];
+
+    let allData = [];
+    let activeYear = 2024;
+
+    function buildChart(year) {
+      const yearData = allData.filter(d => d.year === year);
+
+      // Aggregate by partner (should already be one row per partner/year after C00 filter)
+      const totals = {};
+      for (const row of yearData) {
+        totals[row.partner_name] = (totals[row.partner_name] || 0) + row.value_usd;
+      }
+
+      // Sort and take top 10
+      const sorted = Object.entries(totals)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+      const names  = sorted.map(d => d[0]).reverse();
+      const values = sorted.map(d => d[1]).reverse();
+
+      const trace = {
+        type: 'bar',
+        orientation: 'h',
+        x: values,
+        y: names,
+        marker: {
+          color: names.map((_, i) => GREEN_PALETTE[i] || GREEN_PALETTE[GREEN_PALETTE.length - 1]),
+        },
+        hovertemplate: '<b>%{y}</b><br>$%{x:,.0f}<extra></extra>',
+      };
+
+      const layout = {
+        margin: { l: 140, r: 24, t: 24, b: 56 },
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        xaxis: {
+          title: { text: 'Export value (USD FOB)', font: { size: 12, color: '#555' } },
+          tickformat: '$.3s',
+          gridcolor: '#d8d8d0',
+          zeroline: false,
+          tickfont: { size: 12, color: '#555' },
+        },
+        yaxis: {
+          tickfont: { size: 13, color: '#171717' },
+          automargin: true,
+        },
+        font: { family: 'Heebo, sans-serif' },
+        hoverlabel: {
+          bgcolor: '#024203',
+          font: { color: '#fff', family: 'Heebo, sans-serif', size: 13 },
+        },
+      };
+
+      const config = { responsive: true, displayModeBar: false };
+
+      Plotly.react('chart', [trace], layout, config);
+    }
+
+    // Year toggle
+    document.querySelectorAll('.year-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeYear = parseInt(btn.dataset.year, 10);
+        buildChart(activeYear);
+      });
+    });
+
+    // Load data
+    fetch('data.json')
+      .then(r => r.json())
+      .then(data => {
+        allData = data;
+        buildChart(activeYear);
+      })
+      .catch(err => {
+        document.getElementById('chart').innerHTML =
+          '<p style="padding:40px;color:#555;font-family:Heebo,sans-serif;">Unable to load trade data.</p>';
+        console.error('Failed to load data.json:', err);
+      });
+  </script>
+
+</body>
+</html>
